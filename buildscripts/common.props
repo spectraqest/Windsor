@@ -28,6 +28,7 @@
 		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
 		<PackageOutputPath>../../build/</PackageOutputPath>
 		<PackageVersion>$(BuildVersion)</PackageVersion>
+		<PackageVersion Condition="'$(VersionSuffix)'!=''">$(BuildVersion)-$(VersionSuffix)</PackageVersion>
 		<IncludeSymbols>true</IncludeSymbols>
 		<IncludeSource>false</IncludeSource>
 		<CurrentYear>$([System.DateTime]::Now.ToString("yyyy"))</CurrentYear>
