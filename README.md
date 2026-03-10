@@ -1,5 +1,31 @@
 # Castle Windsor
 
+## Spectra QEST fork
+
+This is a fork of Castle Windsor that is being maintained by Spectra QEST. The original Castle Windsor project is no longer actively maintained, and this fork was necessary to implement some community-submitted pull requests which allow us to continue to use Castle Windsor in modern .NET.
+
+### Build
+
+This fork is not current built in DevOps, rather packages are produced locally which can be pushed to the DevOps NuGet feed.
+
+To build, you can just use Visual Studio:
+* load the top-level Castle.Windsor.sln solution
+* in build\common.props, ensure:
+  * `BuildVersion` is the package version you want to produce, e.g. `6.0.1-alpha`
+  * `SignAssembly` is `false` (should already be in this fork)
+  * `IncludeSymbols` is `false` (should already be in this fork)
+* set the configuration to Release
+* build the solution
+
+NuGet artifacts will be produced in the .\build folder.
+
+Artifacts can be pushed to the DevOps NuGet feed with, from the repository root:
+```
+dotnet nuget push --source qest.packages --api-key az .\build\*.nupkg
+```
+
+## Overview
+
 <img align="right" src="docs/images/windsor-logo.png">
 
 Castle Windsor is a best of breed, mature Inversion of Control container available for .NET.

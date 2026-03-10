@@ -4,13 +4,13 @@
 		<NoWarn>$(NoWarn);CS1591;NU5048</NoWarn>
 		<RepositoryType>git</RepositoryType>
 		<RepositoryUrl>https://github.com/castleproject/Windsor</RepositoryUrl>
-		<BuildVersion>0.0.0</BuildVersion>
+		<BuildVersion>6.0.1-alpha</BuildVersion>
 		<BuildVersion Condition="'$(APPVEYOR_BUILD_VERSION)'!=''">$(APPVEYOR_BUILD_VERSION)</BuildVersion>
 		<BuildVersionMajor>$(BuildVersion.Split('.')[0])</BuildVersionMajor>
 		<BuildVersionNoSuffix>$(BuildVersion.Split('-')[0])</BuildVersionNoSuffix>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<AssemblyOriginatorKeyFile>../../buildscripts/CastleKey.snk</AssemblyOriginatorKeyFile>
-		<SignAssembly>true</SignAssembly>
+		<SignAssembly>false</SignAssembly>
 		<AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
 	</PropertyGroup>
 
@@ -29,7 +29,7 @@
 		<PackageOutputPath>../../build/</PackageOutputPath>
 		<PackageVersion>$(BuildVersion)</PackageVersion>
 		<PackageVersion Condition="'$(VersionSuffix)'!=''">$(BuildVersion)-$(VersionSuffix)</PackageVersion>
-		<IncludeSymbols>true</IncludeSymbols>
+		<IncludeSymbols>false</IncludeSymbols>
 		<IncludeSource>false</IncludeSource>
 		<CurrentYear>$([System.DateTime]::Now.ToString("yyyy"))</CurrentYear>
 		<Copyright>Copyright 2004-$(CurrentYear) Castle Project - http://www.castleproject.org/ </Copyright>
